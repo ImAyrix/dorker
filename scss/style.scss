@@ -1,0 +1,173 @@
+
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+$font-family-sans-serif-2: 'Poppins', sans-serif;
+$font-family-serif: 'Source Serif Pro', serif;
+
+
+
+body {
+	font-family: $font-family-sans-serif;
+	background-color: #19191d;
+  font-weight: 300;
+}
+p {
+	color: darken(#ccc, 10%);
+	font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $font-family-sans-serif;
+}
+a {
+	transition: .3s all ease;
+	&, &:hover {
+		text-decoration: none!important;
+	}
+}
+.content {
+	padding: 7rem 0;
+}
+h2 {
+	font-size: 20px;
+  color: $white;
+}
+
+.custom-table {
+	min-width: 900px;
+	thead {
+		tr, th {
+			border-top: none;
+			border-bottom: none!important;
+      color: $white;
+		}
+	}
+	tbody {
+		th, td {
+			color: #777;
+			font-weight: 400;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      font-weight: 300;
+
+      small {
+        color: darken(#ccc, 10%);
+        font-weight: 300;
+      }
+		}
+    tr {
+      
+      &:not(.spacer) {
+        border-radius: 7px;
+        overflow: hidden;
+        transition: .3s all ease;
+        &:hover {
+          box-shadow: 0 2px 10px -5px rgba($black, .1);
+        }
+      }
+      th, td {
+        background: #25252b;
+        border: none;
+        transition: .3s all ease;
+        a {
+          color: darken(#ccc, 10%);
+        }
+        &:first-child {
+          border-top-left-radius: 0px;  
+          border-bottom-left-radius: 0px;  
+        }
+        &:last-child {
+          border-top-right-radius: 0px;  
+          border-bottom-right-radius: 0px;  
+        }
+      }
+      &.spacer {
+        td {
+          padding: 0!important;
+          height: 3px;
+          border-radius: 0!important;
+          background: transparent!important;
+        }
+      }
+      &.active, &:hover {
+        th, td {
+          a {
+            color: $white;
+          }
+          color: $white;
+          background: lighten(#25252b, 4%);
+        }
+      }
+    }
+	}
+}
+
+
+/* Custom Checkbox */
+.control {
+  display: block;
+  position: relative;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  border: 2px solid #3f3f47;
+  background: transparent;
+}
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  border: 2px solid $primary;
+}
+.control input:checked ~ .control__indicator {
+  border: 2px solid $primary;
+  background: $primary;
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+  border: 2px solid #ccc;
+}
+.control__indicator:after {
+  font-family: 'icomoon';
+  content: '\e5ca';
+  position: absolute;
+  display: none;
+  
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+  color: #fff;
+}
+.control--checkbox .control__indicator:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+}
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+  
+}
+.control--checkbox input:disabled:checked ~ .control__indicator {
+  background-color: $primary;
+  opacity: .2;
+  border: 2px solid $primary;
+}
