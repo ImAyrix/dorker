@@ -15,7 +15,7 @@ To enter multiple domains, separate them with commas.
 https://ayrix.info/dorker?q=domain.tld,domain2.tld
 ```
 
-![Screenshot from 2023-06-12 01-31-05](https://github.com/ImAyrix/dorker/assets/89543912/3f2a5a5e-9215-44ea-a072-b07db8069acf)
+![Screenshot from 2023-06-12 01-33-25](https://github.com/ImAyrix/dorker/assets/89543912/8c24cf1a-cbc6-43f5-b37f-07c511d3fbe3)
 
 
 ## Source
